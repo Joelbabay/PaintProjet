@@ -3,7 +3,7 @@ Projet simple de blog pour un paintre
 
 ## Environnement de développement
 
-## Pré-requis
+### Pré-requis
 
 * PHP 8.0
 * Composer
