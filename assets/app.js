@@ -15,6 +15,7 @@ import './styles/app.scss';
 
 const moment = require('moment');
 import { Tooltip, Toast, Popover } from 'bootstrap';
+require('slick-carousel');
 import './js/main';
 // start the Stimulus application
 import './bootstrap';

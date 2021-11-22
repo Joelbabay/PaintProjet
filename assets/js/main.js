@@ -4,6 +4,8 @@
  * ------------------------------------------------------------------- */
 
 import Masonry from 'masonry-layout';
+import slick from 'slick-carousel';
+
 import './plugins';
 
 (function($) {
@@ -159,9 +161,7 @@ import './plugins';
         });
 
         // layout Masonry after each image loads
-        containerBricks.imagesLoaded().progress(function() {
-            containerBricks.masonry('layout');
-        });
+       
 
     };
 
@@ -196,7 +196,6 @@ import './plugins';
     /* slick slider
      * ------------------------------------------------------ */
     var ssSlickSlider = function() {
-
         var $gallery = $('.slider__slides').slick({
             arrows: false,
             dots: true,
