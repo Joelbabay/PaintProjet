@@ -5,10 +5,16 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
+const $ = require('jquery');
+
+global.$ = global.jquery = $;
+
 // any CSS you import will output into a single css file (app.css in this case)
+import './js/modernizr';
 import './styles/app.scss';
 
+const moment = require('moment');
 import { Tooltip, Toast, Popover } from 'bootstrap';
-
+import './js/main';
 // start the Stimulus application
 import './bootstrap';
