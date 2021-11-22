@@ -20,5 +20,5 @@ npm install
 yarn install
 docker-compose up -d
 symfony serve -d
-``
+````
 
