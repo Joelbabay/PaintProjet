@@ -19,6 +19,15 @@ class PaintRepository extends ServiceEntityRepository
         parent::__construct($registry, Paint::class);
     }
 
+    public function getLastThree()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Paint[] Returns an array of Paint objects
     //  */
