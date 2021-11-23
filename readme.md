@@ -18,6 +18,7 @@ Projet simple de blog pour un paintre
 composer install
 npm install
 yarn install
+npm run build
 docker-compose up -d
 symfony serve -d
 ````
