@@ -50,7 +50,7 @@ class Paint
     private $completionDate;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $CreatedAt;
 
@@ -161,24 +161,24 @@ class Paint
         return $this;
     }
 
-    public function getCompletionDate(): ?\DateTimeInterface
+    public function getCompletionDate(): ?\DateTime
     {
         return $this->completionDate;
     }
 
-    public function setCompletionDate(?\DateTimeInterface $completionDate): self
+    public function setCompletionDate(?\DateTime $completionDate): self
     {
         $this->completionDate = $completionDate;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->CreatedAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $CreatedAt): self
+    public function setCreatedAt(\DateTime $CreatedAt): self
     {
         $this->CreatedAt = $CreatedAt;
 
