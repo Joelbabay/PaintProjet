@@ -12,7 +12,7 @@ class BlogPostController extends AbstractController
     #[Route('/blog/post', name: 'blog_post')]
     public function index(BlogPostRepository $blogPostRepository): Response
     {
-        return $this->render('blog_post/index.html.twig', [
+        return $this->render('blog_post/blog.html.twig', [
             'blogs' => $blogPostRepository->getLastThree(),
         ]);
     }
