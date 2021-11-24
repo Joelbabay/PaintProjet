@@ -23,3 +23,8 @@ docker-compose up -d
 symfony serve -d
 ````
 
+### Ajout des données de test
+
+````bash
+symfony console doctrine:fixtures:load
+````

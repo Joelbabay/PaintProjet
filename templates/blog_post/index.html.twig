@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog
+{% endblock %}
+{% block body %}
+	<style>
+		main {
+			margin: 0 auto !important;
+		}
+	</style>
+	<div class="s-content content">
+		<main class="row content__page">
+			<article class="column large-full entry format-standard">
+				<div class="entry__related">
+					<h3 class="h2">Related Articles</h3>
+
+					<ul class="related">
+						{% for blog in blogs %}
+							<li class="related__item">
+								<a href="single-standard.html" class="related__link">
+									<img src="/img/thumbs/masonry/walk-600.jpg" alt="">
+								</a>
+								<h5 class="related__post-title">{{blog.title}}</h5>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</article>
+		</main>
+	</div>
+{% endblock %}

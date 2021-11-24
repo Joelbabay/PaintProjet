@@ -12,20 +12,11 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Paint[]    findAll()
  * @method Paint[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PaintRepository extends ServiceEntityRepository
+class PaintRepository extends BaseRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Paint::class);
-    }
-
-    public function getLastThree()
-    {
-        return $this->createQueryBuilder('p')
-            ->orderBy('p.id', 'DESC')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult();
     }
 
     // /**
