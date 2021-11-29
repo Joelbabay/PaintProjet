@@ -15,7 +15,7 @@
 					<h3 class="h2">Related Articles</h3>
 
 					<ul class="related">
-						{% for blog in blogs %}
+						{% for blog in pagination %}
 							<li class="related__item">
 								<a href="single-standard.html" class="related__link">
 									<img src="/img/thumbs/masonry/walk-600.jpg" alt="">
@@ -27,5 +27,6 @@
 				</div>
 			</article>
 		</main>
+		{{ knp_pagination_render(pagination, './base/paginator.html.twig') }}
 	</div>
 {% endblock %}
