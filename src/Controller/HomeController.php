@@ -16,7 +16,7 @@ class HomeController extends AbstractController
     public function index(
         PaintRepository $paintRepository,
         Request $request,
-        PaginatorInterface $paginator
+        PaginatorInterface $paginator,
     ): Response {
         $paints = $paintRepository->findAll();
         $pagination = $paginator->paginate(
@@ -26,7 +26,7 @@ class HomeController extends AbstractController
         );
         //dd($paintRepository->getLastThree());
         return $this->render('home/index.html.twig', [
-            'pagination' => $pagination
+            'pagination' => $pagination,
         ]);
     }
 }

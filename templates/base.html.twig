@@ -22,15 +22,12 @@
 		<link rel="manifest" href="/site.webmanifest">
 
 	</head>
-	<body>
-		{% include "base/nav.html.twig" %}
-		{% block body %}{% endblock %}
-		{% include "base/footer.html.twig" %}
+	<body class="ss-bg-white">
+		<div id="top" class="s-wrap site-wrapper">
+			{% include "base/nav.html.twig" %}
+			{% block body %}{% endblock %}
+			{% include "base/footer.html.twig" %}
+		</div>
 	</body>
-
-	{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
-
-	<script></script>
-</html>
+</html></body>{% block javascripts %}
+{{ encore_entry_script_tags('app') }}{% endblock %}<script></script></html>

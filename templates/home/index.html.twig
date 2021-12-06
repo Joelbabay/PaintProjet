@@ -13,65 +13,62 @@
 		</div>
 	</div>
 
-	<div id="top" class="s-wrap site-wrapper">
+	<div class="s-content">
 
-		<div class="s-content">
-			<div class="masonry-wrap">
+		<div class="masonry-wrap">
 
-				<div class="masonry">
+			<div class="masonry">
 
-					<div class="grid-sizer"></div>
-					{% for paint in pagination %}
+				<div class="grid-sizer"></div>
+				{% for paint in pagination %}
 
-						<article class="masonry__brick entry format-standard animate-this">
-							<div class="entry__thumb">
-								<a href="single-standard.html" class="entry__thumb-link">
-									<img src="/img/thumbs/masonry/woodcraft-600.jpg" srcset="/img/thumbs/masonry/woodcraft-600.jpg 1x, /img/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
-								</a>
-							</div>
+					<article class="masonry__brick entry format-standard animate-this">
+						<div class="entry__thumb">
+							<a href="{{ path('paint', {'slug': paint.slug}) }}" class="entry__thumb-link">
+								<img src="/img/thumbs/masonry/woodcraft-600.jpg" srcset="/img/thumbs/masonry/woodcraft-600.jpg 1x, /img/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
+							</a>
+						</div>
 
-							<div class="entry__text">
-								<div class="entry__header">
+						<div class="entry__text">
+							<div class="entry__header">
 
-									<h2 class="entry__title">
-										<a href="single-standard.html">{{ paint.name }}</a>
-									</h2>
-									<div class="entry__meta">
-										<span class="entry__meta-cat">
-											{% for categorie in paint.categorie %}
-												<a href="category.html">{{categorie.name}}</a>
-											{% endfor %}
-										</span>
-										<span class="entry__meta-date">
-											<a href="single-standard.html">{{paint.CreatedAt|date('d/m/Y')}}</a>
-										</span>
-									</div>
-
+								<h2 class="entry__title">
+									<a href="{{ path('paint', {'slug': paint.slug}) }}">{{ paint.name }}</a>
+								</h2>
+								<div class="entry__meta">
+									<span class="entry__meta-cat">
+										{% for categorie in paint.categorie %}
+											<a href="{{ path('categorie', {'name': categorie.name}) }}">{{categorie.name}}</a>
+										{% endfor %}
+									</span>
+									<span class="entry__meta-date">
+										<a href="single-standard.html">{{paint.CreatedAt|date('d/m/Y')}}</a>
+									</span>
 								</div>
-								<div class="entry__excerpt">
-									<p>
-										{{ paint.description|u.truncate(200, '...', false) }}
-									</p>
-								</div>
+
 							</div>
+							<div class="entry__excerpt">
+								<p>
+									{{ paint.description|u.truncate(200, '...', false) }}
+								</p>
+							</div>
+						</div>
 
-						</article>
-						<!-- end article -->
-					{% endfor %}
-
-				</div>
-				<!-- end masonry -->
+					</article>
+					<!-- end article -->
+				{% endfor %}
 
 			</div>
-			<!-- end masonry-wrap -->
-
-			<!-- add paginator -->
-			{{ knp_pagination_render(pagination, './base/paginator.html.twig') }}
+			<!-- end masonry -->
 
 		</div>
-		<!-- end s-content -->
+		<!-- end masonry-wrap -->
+
+		<!-- add paginator -->
+		{{ knp_pagination_render(pagination, './base/paginator.html.twig') }}
 
 	</div>
+	<!-- end s-content -->
 	<!-- end s-wrap -->
 
 
