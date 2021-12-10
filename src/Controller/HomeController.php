@@ -18,6 +18,7 @@ class HomeController extends AbstractController
         Request $request,
         PaginatorInterface $paginator,
     ): Response {
+
         $paints = $paintRepository->findAll();
         $pagination = $paginator->paginate(
             $paints,
